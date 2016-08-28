@@ -1,0 +1,8 @@
+dist/
+resources/
+node_modules/*
+.DS_Store
+.sass-cache
+*~
+.*.swp
+npm-debug.log

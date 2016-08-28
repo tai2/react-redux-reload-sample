@@ -1,0 +1,51 @@
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.screen-container {
+    margin: 8px;
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+
+    .item {
+        &:hover {
+            outline: solid 1px;
+        }
+        img {
+            width: 300px;
+            height: auto;
+        }
+        .title-label {
+            font-weight: bold;
+        }
+        .price-label {
+            font-weight: bold;
+        }
+    }
+}
+
+.navbar {
+    border-bottom: solid 1px;
+    height: 1.5em;
+    text-align: right;
+    padding: 5px;
+}
+
+button {
+    font-size: 20pt;
+    font-weight: bold;
+    margin: 3px;
+}
+
+.message {
+    color: red;
+}
+
+.error {
+    color: red;
+}
