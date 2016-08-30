@@ -8,6 +8,7 @@ var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var sourcemaps = require('gulp-sourcemaps');
 var livereload = require('gulp-livereload');
+var hmr = require('browserify-hmr');
 var merge = require('merge-stream');
 var del = require('del');
 var gutil = require('gulp-util');
@@ -51,20 +52,17 @@ gulp.task('js:watch', function bundle() {
             debug: true,
             cache: {},
             packageCache: {},
-            plugin: [watchify],
+            plugin: [watchify, hmr],
         })
         .on('update', bundle)
         .on('log', gutil.log);
     }
 
-    livereload.listen();
-
     return w.bundle()
     .on('error', gutil.log.bind(gutil, 'Browserify Error'))
     .pipe(source('./bundle_dev.js'))
     .pipe(buffer())
-    .pipe(gulp.dest('./dist'))
-    .pipe(livereload());
+    .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('js:develop', function() {

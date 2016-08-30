@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import App from 'app/components/app.jsx';
+import Root from 'app/components/root.jsx';
 
 function mapStateToProps(state) {
     return {
@@ -17,4 +17,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(App);
+)(Root);

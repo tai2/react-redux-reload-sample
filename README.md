@@ -6,7 +6,7 @@ Neither of react-hot-loader or livereactload is needed.
 * [react](https://facebook.github.io/react/)
 * [redux](http://redux.js.org/)
 * [redux-devtools](https://github.com/gaearon/redux-devtools)
-* [browserify](http://browserify.org/)
+* [browserify](http://browserify.org/) / [browserify-hmr](https://github.com/AgentME/browserify-hmr)
  
 # How to run
 

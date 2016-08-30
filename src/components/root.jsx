@@ -16,8 +16,11 @@ function Screen(props) {
         return null;
     }
 }
+Screen.propTypes = {
+    step: PropTypes.string.isRequired,
+};
 
-class App extends Component {
+class Root extends Component {
     constructor(props) {
         super(props);
     }
@@ -32,8 +35,8 @@ class App extends Component {
         );
     }
 }
-App.propTypes = {
+Root.propTypes = {
     step: PropTypes.string.isRequired,
 };
 
-export default App;
+export default Root;
