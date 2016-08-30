@@ -2,5 +2,8 @@
     "name": "assets",
     "version": "0.0.1",
     "browserify": {
+        "transform": [
+            ["sassify", {"auto-inject": true}]
+        ]
     }
 }

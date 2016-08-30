@@ -30,21 +30,6 @@ gulp.task('copy-assets', function() {
     return merge(t1, t2);
 });
 
-gulp.task('css:develop', function() {
-    return gulp
-    .src('assets/stylesheets/base.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./dist/'))
-    .pipe(livereload());
-});
-
-gulp.task('css:watch', ['css:develop'], function() {
-    livereload.listen();
-    gulp.watch('./assets/stylesheets/*.scss', ['css:develop']);
-});
-
 var w;
 gulp.task('js:watch', function bundle() {
     if (!w) {
@@ -98,7 +83,7 @@ gulp.task('server', function() {
     app.listen(process.env.PORT || 3000);
 });
 
-gulp.task('develop', ['copy-assets', 'css:develop', 'js:develop']);
+gulp.task('develop', ['copy-assets', 'js:develop']);
 
-gulp.task('watch', ['copy-assets', 'css:watch', 'js:watch', 'server']);
+gulp.task('watch', ['copy-assets', 'js:watch', 'server']);
 

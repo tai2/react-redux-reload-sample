@@ -1,8 +1,10 @@
 import "babel-polyfill";
 import React from 'react';
 import { render } from 'react-dom';
-const App = require('app/components/app_dev.jsx');
 
+require('app/stylesheet.js');
+
+const App = require('app/components/app_dev.jsx');
 render(<App/>, document.getElementById('app'));
 
 if (module.hot) {
